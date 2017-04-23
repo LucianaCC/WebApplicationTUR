@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{E996E2CE-BC18-42B6-9ADA-0C809B09E299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelClasses", "ModelClasses\ModelClasses.csproj", "{A9B6EC10-2849-4AA2-BE22-0BF5F50D5985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppTUR", "WebAppTUR\WebAppTUR.csproj", "{4CAD8017-7346-4C7E-B455-69B278EADE4B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://lucianacavalieri.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DAL\\DAL.csproj
+		SccProjectName1 = DAL
+		SccLocalPath1 = DAL
+		SccProjectUniqueName2 = ModelClasses\\ModelClasses.csproj
+		SccProjectName2 = ModelClasses
+		SccLocalPath2 = ModelClasses
+		SccProjectUniqueName3 = WebAppTUR\\WebAppTUR.csproj
+		SccProjectName3 = WebAppTUR
+		SccLocalPath3 = WebAppTUR
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E996E2CE-BC18-42B6-9ADA-0C809B09E299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E996E2CE-BC18-42B6-9ADA-0C809B09E299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E996E2CE-BC18-42B6-9ADA-0C809B09E299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E996E2CE-BC18-42B6-9ADA-0C809B09E299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B6EC10-2849-4AA2-BE22-0BF5F50D5985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B6EC10-2849-4AA2-BE22-0BF5F50D5985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B6EC10-2849-4AA2-BE22-0BF5F50D5985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B6EC10-2849-4AA2-BE22-0BF5F50D5985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CAD8017-7346-4C7E-B455-69B278EADE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CAD8017-7346-4C7E-B455-69B278EADE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CAD8017-7346-4C7E-B455-69B278EADE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CAD8017-7346-4C7E-B455-69B278EADE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

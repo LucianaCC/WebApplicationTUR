@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TurismoReceptivoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="TurismoReceptivoModelStoreContainer">
+    <EntitySet Name="Ciudades" EntityType="TurismoReceptivoModel.Store.Ciudades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cliente" EntityType="TurismoReceptivoModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cuenta" EntityType="TurismoReceptivoModel.Store.Cuenta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Divisas" EntityType="TurismoReceptivoModel.Store.Divisas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hotel" EntityType="TurismoReceptivoModel.Store.Hotel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Operador" EntityType="TurismoReceptivoModel.Store.Operador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PrecioHotelDetail" EntityType="TurismoReceptivoModel.Store.PrecioHotelDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProgramaDetallePrecio" EntityType="TurismoReceptivoModel.Store.ProgramaDetallePrecio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Programas" EntityType="TurismoReceptivoModel.Store.Programas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Servicio" EntityType="TurismoReceptivoModel.Store.Servicio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServicioDetalleIdiomas" EntityType="TurismoReceptivoModel.Store.ServicioDetalleIdiomas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServicioPrecio" EntityType="TurismoReceptivoModel.Store.ServicioPrecio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Imagenes" EntityType="TurismoReceptivoModel.Store.Imagenes" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Pais" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Codigo" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CodInt" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Passport" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Lenguaje" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Ciudad" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Pais" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Contacto" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Fechaarribo" Type="datetime" Nullable="true" />
+    <Property Name="Ticketaereo" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Fecharegreso" Type="datetime" Nullable="true" />
+    <Property Name="Observaciones" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PAX" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Paquete" Type="int" Nullable="true" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Cuenta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Pass" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="DNI" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CodigoVendedor" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Divisas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Codigo" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Cambio" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Simbolo" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Categoria" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Observacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Contacto" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="NombreBco" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="NroCuenta" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DireccionBco" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Cuit" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CBU" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Checkin" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Checkout" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Ciudad" Type="int" Nullable="true" />
+    <Property Name="ObservacionBco" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Operador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Ciudad" Type="int" Nullable="true" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CodPostal" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Contacto" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="NombreBco" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="NroCuenta" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DireccionBco" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CUIT" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CBU" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PrecioHotelDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdHotel" Type="int" Nullable="true" />
+    <Property Name="PrecioDolar" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="PrecioPeso" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="TipoHabitacion" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FechaDesde" Type="datetime" Nullable="true" />
+    <Property Name="FechaHasta" Type="datetime" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ProgramaDetallePrecio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdPrograma" Type="int" Nullable="false" />
+    <Property Name="fechaDesde" Type="datetime" Nullable="true" />
+    <Property Name="fechaHasta" Type="datetime" Nullable="true" />
+    <Property Name="idHotel" Type="int" Nullable="true" />
+    <Property Name="TipoHab" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="noches" Type="int" Nullable="true" />
+    <Property Name="cantHabitaciones" Type="int" Nullable="true" />
+    <Property Name="tiposervicio" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="cantPasajeros" Type="int" Nullable="true" />
+    <Property Name="tipoAereo" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="costoUnit" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="costoTotal" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Programas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TituloPrograma" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FechaStarte" Type="datetime" Nullable="true" />
+    <Property Name="FechaEnd" Type="datetime" Nullable="true" />
+    <Property Name="CantDias" Type="int" Nullable="true" />
+    <Property Name="Categoria" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FechaValidez" Type="datetime" Nullable="true" />
+    <Property Name="Dolar" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Euro" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Margen" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Actividad" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DiasCant" Type="int" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TipoTranfer" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Operador" Type="int" Nullable="true" />
+    <Property Name="Ciudad" Type="int" Nullable="true" />
+    <Property Name="CiudadOrigen" Type="int" Nullable="true" />
+    <Property Name="CiudadDestino" Type="int" Nullable="true" />
+    <Property Name="HoraSalida" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="HoraLlegada" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+    <Property Name="Image" Type="int" Nullable="true" />
+    <Property Name="Observacion" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ServicioDetalleIdiomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdServicio" Type="int" Nullable="true" />
+    <Property Name="NombreES" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DescripcionEs" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NombreEN" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DescripcionEN" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NombrePT" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DescripcionPT" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NombreIT" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DetalleIT" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NumeroDia" Type="int" Nullable="true" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ServicioPrecio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdOperador" Type="int" Nullable="true" />
+    <Property Name="FechaDesde" Type="datetime" Nullable="true" />
+    <Property Name="FechaHasta" Type="datetime" Nullable="true" />
+    <Property Name="Moneda" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="IdServicio" Type="int" Nullable="true" />
+    <Property Name="Precio" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="TipoServicio" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" Nullable="true" />
+    <Property Name="Unit" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Imagenes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Imagen" Type="varbinary(max)" Nullable="true" />
+    <Property Name="NombreImagen" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TurismoReceptivoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TurismoReceptivoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ciudades" EntityType="TurismoReceptivoModel.Ciudades" />
+          <EntitySet Name="Cliente" EntityType="TurismoReceptivoModel.Cliente" />
+          <EntitySet Name="Cuenta" EntityType="TurismoReceptivoModel.Cuenta" />
+          <EntitySet Name="Divisas" EntityType="TurismoReceptivoModel.Divisas" />
+          <EntitySet Name="Hotel" EntityType="TurismoReceptivoModel.Hotel" />
+          <EntitySet Name="Operador" EntityType="TurismoReceptivoModel.Operador" />
+          <EntitySet Name="PrecioHotelDetail" EntityType="TurismoReceptivoModel.PrecioHotelDetail" />
+          <EntitySet Name="ProgramaDetallePrecio" EntityType="TurismoReceptivoModel.ProgramaDetallePrecio" />
+          <EntitySet Name="Programas" EntityType="TurismoReceptivoModel.Programas" />
+          <EntitySet Name="Servicio" EntityType="TurismoReceptivoModel.Servicio" />
+          <EntitySet Name="ServicioDetalleIdiomas" EntityType="TurismoReceptivoModel.ServicioDetalleIdiomas" />
+          <EntitySet Name="ServicioPrecio" EntityType="TurismoReceptivoModel.ServicioPrecio" />
+          <EntitySet Name="Imagenes" EntityType="TurismoReceptivoModel.Imagenes" />
+        </EntityContainer>
+        <EntityType Name="Ciudades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Pais" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Codigo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodInt" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Apellido" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Passport" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Lenguaje" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ciudad" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pais" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefono" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contacto" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Fechaarribo" />
+          <Property Type="String" Name="Ticketaereo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Fecharegreso" />
+          <Property Type="String" Name="Observaciones" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PAX" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Paquete" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nombre" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pass" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DNI" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodigoVendedor" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Divisas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Codigo" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Cambio" Precision="18" Scale="2" />
+          <Property Type="String" Name="Simbolo" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Categoria" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Observacion" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contacto" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NombreBco" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NroCuenta" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DireccionBco" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cuit" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CBU" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Checkin" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Checkout" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ciudad" />
+          <Property Type="String" Name="ObservacionBco" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefono" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Operador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ciudad" />
+          <Property Type="String" Name="Direccion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodPostal" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefono" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contacto" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NombreBco" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NroCuenta" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DireccionBco" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CUIT" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CBU" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="PrecioHotelDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdHotel" />
+          <Property Type="Decimal" Name="PrecioDolar" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="PrecioPeso" Precision="18" Scale="2" />
+          <Property Type="String" Name="TipoHabitacion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaDesde" />
+          <Property Type="DateTime" Name="FechaHasta" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="ProgramaDetallePrecio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdPrograma" Nullable="false" />
+          <Property Type="DateTime" Name="fechaDesde" />
+          <Property Type="DateTime" Name="fechaHasta" />
+          <Property Type="Int32" Name="idHotel" />
+          <Property Type="String" Name="TipoHab" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="noches" />
+          <Property Type="Int32" Name="cantHabitaciones" />
+          <Property Type="String" Name="tiposervicio" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="cantPasajeros" />
+          <Property Type="String" Name="tipoAereo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="costoUnit" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="costoTotal" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Programas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="TituloPrograma" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaStarte" />
+          <Property Type="DateTime" Name="FechaEnd" />
+          <Property Type="Int32" Name="CantDias" />
+          <Property Type="String" Name="Categoria" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaValidez" />
+          <Property Type="Decimal" Name="Dolar" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Euro" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Margen" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Descuento" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Actividad" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DiasCant" />
+          <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TipoTranfer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Operador" />
+          <Property Type="Int32" Name="Ciudad" />
+          <Property Type="Int32" Name="CiudadOrigen" />
+          <Property Type="Int32" Name="CiudadDestino" />
+          <Property Type="String" Name="HoraSalida" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HoraLlegada" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+          <Property Type="Int32" Name="Image" />
+          <Property Type="String" Name="Observacion" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ServicioDetalleIdiomas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdServicio" />
+          <Property Type="String" Name="NombreES" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DescripcionEs" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NombreEN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DescripcionEN" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NombrePT" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DescripcionPT" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NombreIT" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DetalleIT" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NumeroDia" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="ServicioPrecio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdOperador" />
+          <Property Type="DateTime" Name="FechaDesde" />
+          <Property Type="DateTime" Name="FechaHasta" />
+          <Property Type="String" Name="Moneda" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IdServicio" />
+          <Property Type="Decimal" Name="Precio" Precision="18" Scale="2" />
+          <Property Type="String" Name="TipoServicio" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" />
+          <Property Type="Boolean" Name="Unit" />
+        </EntityType>
+        <EntityType Name="Imagenes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Binary" Name="Imagen" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="NombreImagen" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TurismoReceptivoModelStoreContainer" CdmEntityContainer="TurismoReceptivoEntities">
+    <EntitySetMapping Name="Ciudades">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Ciudades)">
+        <MappingFragment StoreEntitySet="Ciudades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodInt" ColumnName="CodInt" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Cliente)">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="Lenguaje" ColumnName="Lenguaje" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Fechaarribo" ColumnName="Fechaarribo" />
+          <ScalarProperty Name="Ticketaereo" ColumnName="Ticketaereo" />
+          <ScalarProperty Name="Fecharegreso" ColumnName="Fecharegreso" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="PAX" ColumnName="PAX" />
+          <ScalarProperty Name="Paquete" ColumnName="Paquete" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuenta">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Cuenta)">
+        <MappingFragment StoreEntitySet="Cuenta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CodigoVendedor" ColumnName="CodigoVendedor" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisas">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Divisas)">
+        <MappingFragment StoreEntitySet="Divisas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Cambio" ColumnName="Cambio" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotel">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Hotel)">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NombreBco" ColumnName="NombreBco" />
+          <ScalarProperty Name="NroCuenta" ColumnName="NroCuenta" />
+          <ScalarProperty Name="DireccionBco" ColumnName="DireccionBco" />
+          <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+          <ScalarProperty Name="CBU" ColumnName="CBU" />
+          <ScalarProperty Name="Checkin" ColumnName="Checkin" />
+          <ScalarProperty Name="Checkout" ColumnName="Checkout" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="ObservacionBco" ColumnName="ObservacionBco" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operador">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Operador)">
+        <MappingFragment StoreEntitySet="Operador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NombreBco" ColumnName="NombreBco" />
+          <ScalarProperty Name="NroCuenta" ColumnName="NroCuenta" />
+          <ScalarProperty Name="DireccionBco" ColumnName="DireccionBco" />
+          <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+          <ScalarProperty Name="CBU" ColumnName="CBU" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrecioHotelDetail">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.PrecioHotelDetail)">
+        <MappingFragment StoreEntitySet="PrecioHotelDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdHotel" ColumnName="IdHotel" />
+          <ScalarProperty Name="PrecioDolar" ColumnName="PrecioDolar" />
+          <ScalarProperty Name="PrecioPeso" ColumnName="PrecioPeso" />
+          <ScalarProperty Name="TipoHabitacion" ColumnName="TipoHabitacion" />
+          <ScalarProperty Name="FechaDesde" ColumnName="FechaDesde" />
+          <ScalarProperty Name="FechaHasta" ColumnName="FechaHasta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramaDetallePrecio">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.ProgramaDetallePrecio)">
+        <MappingFragment StoreEntitySet="ProgramaDetallePrecio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPrograma" ColumnName="IdPrograma" />
+          <ScalarProperty Name="fechaDesde" ColumnName="fechaDesde" />
+          <ScalarProperty Name="fechaHasta" ColumnName="fechaHasta" />
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="TipoHab" ColumnName="TipoHab" />
+          <ScalarProperty Name="noches" ColumnName="noches" />
+          <ScalarProperty Name="cantHabitaciones" ColumnName="cantHabitaciones" />
+          <ScalarProperty Name="tiposervicio" ColumnName="tiposervicio" />
+          <ScalarProperty Name="cantPasajeros" ColumnName="cantPasajeros" />
+          <ScalarProperty Name="tipoAereo" ColumnName="tipoAereo" />
+          <ScalarProperty Name="costoUnit" ColumnName="costoUnit" />
+          <ScalarProperty Name="costoTotal" ColumnName="costoTotal" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programas">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Programas)">
+        <MappingFragment StoreEntitySet="Programas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TituloPrograma" ColumnName="TituloPrograma" />
+          <ScalarProperty Name="FechaStarte" ColumnName="FechaStarte" />
+          <ScalarProperty Name="FechaEnd" ColumnName="FechaEnd" />
+          <ScalarProperty Name="CantDias" ColumnName="CantDias" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="FechaValidez" ColumnName="FechaValidez" />
+          <ScalarProperty Name="Dolar" ColumnName="Dolar" />
+          <ScalarProperty Name="Euro" ColumnName="Euro" />
+          <ScalarProperty Name="Margen" ColumnName="Margen" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicio">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Servicio)">
+        <MappingFragment StoreEntitySet="Servicio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Actividad" ColumnName="Actividad" />
+          <ScalarProperty Name="DiasCant" ColumnName="DiasCant" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoTranfer" ColumnName="TipoTranfer" />
+          <ScalarProperty Name="Operador" ColumnName="Operador" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="CiudadOrigen" ColumnName="CiudadOrigen" />
+          <ScalarProperty Name="CiudadDestino" ColumnName="CiudadDestino" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="HoraLlegada" ColumnName="HoraLlegada" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicioDetalleIdiomas">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.ServicioDetalleIdiomas)">
+        <MappingFragment StoreEntitySet="ServicioDetalleIdiomas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
+          <ScalarProperty Name="NombreES" ColumnName="NombreES" />
+          <ScalarProperty Name="DescripcionEs" ColumnName="DescripcionEs" />
+          <ScalarProperty Name="NombreEN" ColumnName="NombreEN" />
+          <ScalarProperty Name="DescripcionEN" ColumnName="DescripcionEN" />
+          <ScalarProperty Name="NombrePT" ColumnName="NombrePT" />
+          <ScalarProperty Name="DescripcionPT" ColumnName="DescripcionPT" />
+          <ScalarProperty Name="NombreIT" ColumnName="NombreIT" />
+          <ScalarProperty Name="DetalleIT" ColumnName="DetalleIT" />
+          <ScalarProperty Name="NumeroDia" ColumnName="NumeroDia" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicioPrecio">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.ServicioPrecio)">
+        <MappingFragment StoreEntitySet="ServicioPrecio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdOperador" ColumnName="IdOperador" />
+          <ScalarProperty Name="FechaDesde" ColumnName="FechaDesde" />
+          <ScalarProperty Name="FechaHasta" ColumnName="FechaHasta" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="IdServicio" ColumnName="IdServicio" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imagenes">
+      <EntityTypeMapping TypeName="IsTypeOf(TurismoReceptivoModel.Imagenes)">
+        <MappingFragment StoreEntitySet="Imagenes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="NombreImagen" ColumnName="NombreImagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TurismoReceptivoModel" ZoomLevel="74">
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Ciudades" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Cliente" Width="1.5" PointX="2.75" PointY="0.75" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Cuenta" Width="1.5" PointX="4.75" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Divisas" Width="1.5" PointX="4.75" PointY="4.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Hotel" Width="1.5" PointX="6.75" PointY="0.75" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Operador" Width="1.5" PointX="0.75" PointY="6.75" Height="3.9033007812500031" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.PrecioHotelDetail" Width="1.5" PointX="6.75" PointY="6.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.ProgramaDetallePrecio" Width="1.5" PointX="2.75" PointY="7.75" Height="3.7109993489583317" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Programas" Width="1.5" PointX="8.75" PointY="0.75" Height="3.3263964843750067" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Servicio" Width="1.5" PointX="8.75" PointY="5.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.ServicioDetalleIdiomas" Width="1.5" PointX="10.75" PointY="0.75" Height="3.3263964843750102" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.ServicioPrecio" Width="1.5" PointX="4.75" PointY="10.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="TurismoReceptivoModel.Imagenes" Width="1.5" PointX="7.375" PointY="10.75" Height="1.5956835937500031" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
